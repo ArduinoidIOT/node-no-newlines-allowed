@@ -1,7 +1,4 @@
 #!/bin/sh
 
-if find "$1" | grep '\.css'$ > /dev/null; then
-  echo "CSS"
-  exit 0
-fi
-exit 1
+echo "CSS"
+exit 0
