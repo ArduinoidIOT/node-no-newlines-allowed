@@ -1,7 +1,14 @@
 #!/bin/sh
+
 echo "-----> Optimizing CSS files"
 
 indent() {
   sed -u 's/^/       /'
 }
-find $1 -name "*.css" -exec ./optimize_css_file {} \;
+
+find $1 -name "*.css" -exec "$(pwd)"/optimize_css_file {} \;
+
+if command -v node; then
+  echo "-----> node.js version $(node --version) detected, using advanced optimization"
+  npm install csso
+fi
