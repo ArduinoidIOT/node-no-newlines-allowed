@@ -5,5 +5,5 @@ indent() {
 }
 
 # echo Optimizing $1 | indent
-sed "/\/\*.*\*\//d;/\/\*/,/\*\// d" $1 -i
-sed -f "$(pwd)"/css_minifier.sed $1 -i
+sed "/\/\*.*\*\//d;/\/\*/,/\*\// d" "$1" -i
+sed -f "$(pwd)"/css_minifier.sed "$1" -i
