@@ -1,0 +1,4 @@
+echo $1
+sed "/\/\*.*\*\//d;/\/\*/,/\*\// d" $1 -i
+sed -f "$(pwd)"/css_minifier.sed $1 -i
+echo
