@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mkdir "$1"/no-newline -p
+mkdir "$2"/no-newline -p
 cd bin/
 
 echo "-----> Optimizing CSS files"
