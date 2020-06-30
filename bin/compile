@@ -3,7 +3,7 @@
 [ -n "$DO_NOT_OPTIMIZE" ] && echo "-----> DO_NOT_OPTIMIZE envvar set, not optimizing" && exit
 
 mkdir "$2"/no-newline -p
-cd bin/
+cd bin/ 2>/dev/null # For production env
 
 echo "-----> Optimizing CSS files"
 
