@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mkdir "$1"/no-newlines -p
+mkdir "$1"/no-newline -p
 cd bin/
 
 echo "-----> Optimizing CSS files"
@@ -14,7 +14,7 @@ find "$1" -type f -name "*.css" -exec "$(pwd)"/optimize_css_file {} \;
 if command -v node > /dev/null; then
   echo "-----> node.js version $(node --version) detected, using advanced optimization"
   [ -d "$1"/no-newline/node_modules ] && cp "$1"/no-newline/node_modules . -r
-  npm install csso > /dev/null 2>&1 && cp node_modules "$1"/no-newline/node_modules -r
+  npm install csso > /dev/null 2>&1 && cp node_modules "$2"/no-newline/node_modules -r
   find "$1" -name "*.css" -exec node "$(pwd)"/optimize.js {} \;
 else
   echo "-----> node.js not detected, cannot use advanced optimization"
